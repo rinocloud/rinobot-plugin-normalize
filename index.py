@@ -24,4 +24,6 @@ if __name__ == "__main__":
     if args.algo == "max":
         data[:, args.column - 1] = col/col.max()
 
-    np.savetxt(filename_without_ext + '-normalized.txt', data)
+    np.savetxt(
+        filename_without_ext + '-normalized-col%d-%s-.txt' % (args.column, args.algo), 
+        data)
