@@ -1,0 +1,14 @@
+{
+  "main": "index.py",
+  "engine": "python3",
+  "name": "rinobot-plugin-normalize",
+  "description": "Normalises a column of data",
+  "version": "0.0.1",
+  "author": "eoin murray",
+  "license": "MIT",
+  "repository": "https://github.com/rinocloud/rinobot-plugin-normalize.git",
+  "keywords": [
+    "rinobot",
+    "rinocloud"
+  ]
+}
