@@ -3,7 +3,7 @@
   "engine": "python3",
   "name": "rinobot-plugin-normalize",
   "description": "Normalises a column of data",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "eoin murray",
   "license": "MIT",
   "repository": "https://github.com/rinocloud/rinobot-plugin-normalize.git",
