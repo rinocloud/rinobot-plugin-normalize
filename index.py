@@ -1,29 +1,25 @@
-import sys
-import os
-import argparse
+import rinobot_plugin as bot
 import numpy as np
-import matplotlib
-import matplotlib.pyplot as plt
+
+def main():
+    # lets get our parameters and data
+    filepath = bot.filepath()
+    data = bot.loadfile(filepath)
+
+    # now comes the custom plugin logic
+    algo = bot.get_arg('algo', type=str)
+    index = bot.index_from_args(data)
+
+    if algo == "sum":
+        data[index] = np.array([col/col.sum() for col in data[index].T]).T
+    elif algo == "max":
+        data[index] = np.array([col/col.max() for col in data[index].T]).T
+
+    outname = bot.no_extension() + '-normalize-%s.txt' % algo
+
+    # then we set up the output
+    outpath = bot.output_filepath(outname)
+    np.savetxt(outpath, data)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument('filepath', type=str)
-    parser.add_argument('--column', type=int, required=True)
-    parser.add_argument('--algo', type=str, choices=['sum', 'max'], required=True)
-
-    args = parser.parse_args()
-    filepath = args.filepath
-
-    filename_without_ext = os.path.splitext(filepath)[0]
-    data = np.loadtxt(filepath)
-
-    col = data[:, args.column - 1]
-
-    if args.algo == "sum":
-        data[:, args.column - 1] = col/col.sum()
-    if args.algo == "max":
-        data[:, args.column - 1] = col/col.max()
-
-    np.savetxt(
-        filename_without_ext + '-normalized-col%d-%s-.txt' % (args.column, args.algo), 
-        data)
+    main()

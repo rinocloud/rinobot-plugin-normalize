@@ -7,7 +7,7 @@ In the extra args section of the rinobot automation config you can set the follo
 
 Extra args:
 ```
---column=2 --algo=max
+--cols=2 --algo=max
 ```
 
 Column is which ever data column you want to normalize, and algo is either `sum` or `max`, to normaize
