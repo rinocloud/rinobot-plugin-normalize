@@ -3,7 +3,7 @@
   "engine": "python3",
   "name": "rinobot-plugin-normalize",
   "description": "Normalises a column of data",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "template": "--column=2 --algo=max",
   "author": "eoin murray",
   "license": "MIT",
@@ -19,7 +19,10 @@
     "algo": {
       "type": "string",
       "description": "Specify to normalize by the max or sum or the columns.",
-      "allowed": ["sum", "max"],
+      "allowed": [
+        "sum",
+        "max"
+      ],
       "required": true
     }
   },
