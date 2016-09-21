@@ -7,7 +7,7 @@ def main():
     data = bot.loadfile(filepath)
 
     # now comes the custom plugin logic
-    algo = bot.get_arg('algo', type=str)
+    algo = bot.get_arg('algo', type=str, required=True)
     index = bot.index_from_args(data)
 
     if algo == "sum":

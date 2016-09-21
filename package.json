@@ -7,8 +7,24 @@
   "template": "--column=2 --algo=max",
   "author": "eoin murray",
   "license": "MIT",
+  "options": {
+    "cols": {
+      "type": "string",
+      "description": "Specify which columns to operate on."
+    },
+    "rows": {
+      "type": "string",
+      "description": "Specify which row to operate on."
+    },
+    "algo": {
+      "type": "string",
+      "description": "Specify to normalize by the max or sum or the columns.",
+      "allowed": ["sum", "max"],
+      "required": true
+    }
+  },
   "scripts": {
-    "postinstall": "pip install rinobot_plugin --upgrade"
+    "postinstall": "pip install rinobot-plugin --upgrade"
   },
   "repository": "https://github.com/rinocloud/rinobot-plugin-normalize.git",
   "keywords": [
