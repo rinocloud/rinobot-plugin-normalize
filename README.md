@@ -1,18 +1,5 @@
 # rinobot-plugin-normalize
 
-
-## Arguments:
-
-In the extra args section of the rinobot automation config you can set the following parameters
-
-Extra args:
-```
---cols=2 --algo=max
-```
-
-Column is which ever data column you want to normalize, and algo is either `sum` or `max`, to normaize
-by the sum of every number in the column, or by the max number in the column.
-
 ## Example
 
 Normalizes an axis of your data.
@@ -37,3 +24,14 @@ here is `max` for the example data above, using `--column=2 --algo=max`
 3 0.8
 4 1.0
 ```
+
+
+## Options
+
+## Options:
+
+In the extra args section of the rinobot automation config you can set the following parameters
+
+- algo [__required__]: either `sum` or `max`, to normalize by the sum of every number in the column, or by the max number in the column.
+- cols: the columns to work on (see [Selecting columns and rows of data](https://docs.rinocloud.com/rinocloud-desktop/slicing_data.html))
+- rows: the rows to work on
