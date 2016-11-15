@@ -3,7 +3,7 @@
   "engine": "python3",
   "name": "rinobot-plugin-normalize",
   "description": "Normalises a column of data",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "template": "--column=2 --algo=max",
   "author": "eoin murray",
   "license": "MIT",
